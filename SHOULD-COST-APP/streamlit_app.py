@@ -3,7 +3,7 @@ import pandas as pd
 from hit_api import trigger_jobs
 from get_result import get_result
 
-st.logo('mars_logo.png',size='large')
+st.logo('/mars_logo.png',size='large')
 st.write("## MARKET INTELLIGENCE INPUT FORM")
 
 
