@@ -15,8 +15,8 @@ def get_result(run_id):
         response_json = json.loads(response.text)  # Parse the response JSON
         
         # Check the life cycle state
-        if response_json["metadata"]["state"]["life_cycle_state"] == 'RUNNING':
-            time.sleep(5)  # Wait for 5 seconds and retry
+        if response_json["metadata"]["state"]["life_cycle_state"] != 'TERMINATED':
+            time.sleep(3)  # Wait for 5 seconds and retry
         else:
             result = response_json["notebook_output"]["result"] # Return the result if not running
             break
